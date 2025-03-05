@@ -38,6 +38,7 @@ class _RegisterAuthScreenState extends State<RegisterAuthScreen> {
               //inputs-correo
               InputsComponents(
                 hintext: 'Ingresar nombre y apellido',
+                autocorrect: true,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.text,
                 controller: register.fullNameController,
@@ -49,6 +50,7 @@ class _RegisterAuthScreenState extends State<RegisterAuthScreen> {
               InputsComponents(
                 hintext: 'Ingresar correo electrónico',
                 textInputAction: TextInputAction.next,
+                autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 controller: register.emailController,
                 validator: (val) => ValidationInputs.email(val),

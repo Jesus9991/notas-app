@@ -6,7 +6,9 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:notas_app/controllers/exports/exports.dart';
+import 'package:notas_app/controllers/exports/screens_exports.dart';
 
 /*
 PROVIDER PARA EL INICIO DE SESION DEL USUARIO
@@ -274,5 +276,28 @@ class LoginAuthProvider extends ChangeNotifier {
     _passwordController.clear();
     _isLoading = false;
     notifyListeners();
+  }
+
+  /*cierra la sesion al usaurio */
+  closeSesionAuth(BuildContext context) async {
+    try {
+      /*borra los datos*/
+      await LoginDataPreferences().clearUserData();
+      await InfoUserPreferences().clearUserData();
+      await FirebaseAuth.instance.signOut();
+      await GoogleSignIn().signOut();
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => LoginAuthScreen()),
+          (Route<dynamic> route) => false,
+        );
+      });
+
+      notifyListeners();
+    } catch (e) {
+      //
+    }
   }
 }

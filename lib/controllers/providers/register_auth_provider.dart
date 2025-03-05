@@ -103,6 +103,7 @@ class RegisterAuthProvider extends ChangeNotifier {
           "name_user": _fullNameController.text,
           "email_user": user.email,
           "created_user": dateTimeFormat,
+          "key_google": "",
         });
 
         /*envia un correo para verifcacion */

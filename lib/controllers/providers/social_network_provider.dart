@@ -107,7 +107,7 @@ class SocialNetworkProvider extends ChangeNotifier {
           /*actualiza el id de gooogle */
           await databaseReference.doc(tokenUser).update(
             {
-              'google': userCredential.user?.uid,
+              'key_google': userCredential.user?.uid,
             },
           );
 

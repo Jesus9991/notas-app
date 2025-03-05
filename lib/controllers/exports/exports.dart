@@ -1,3 +1,4 @@
+export 'package:notas_app/controllers/providers/system_navegation_provider.dart';
 export 'package:notas_app/controllers/providers/social_network_provider.dart';
 export 'package:notas_app/controllers/providers/reset_password_auth_provider.dart';
 export 'package:notas_app/controllers/providers/register_auth_provider.dart';

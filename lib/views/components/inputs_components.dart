@@ -9,6 +9,7 @@ class InputsComponents extends StatelessWidget {
   final String hintext;
   final String? initialValue;
   final bool? enabled;
+  final bool autocorrect;
   final int? maxLine;
   final TextInputType? keyboardType;
   final TextCapitalization? textCapitalization;
@@ -28,6 +29,7 @@ class InputsComponents extends StatelessWidget {
     required this.validator,
     required this.onChanged,
     this.textCapitalization,
+    required this.autocorrect,
   });
 
   @override
@@ -39,6 +41,7 @@ class InputsComponents extends StatelessWidget {
     return TextFormField(
       textAlign: TextAlign.start,
       controller: controller,
+      autocorrect: autocorrect,
       initialValue: initialValue,
       textCapitalization: textCapitalization ?? TextCapitalization.none,
       enabled: enabled,

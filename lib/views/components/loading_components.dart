@@ -42,15 +42,15 @@ class LoadingComponents extends StatelessWidget {
     /*verifica si el modo es oscuro o claro */
     bool isDarkMode = brightness == Brightness.dark;
     return Center(
-      child: !isiOS
+      child: isiOS
           ? CircularProgressIndicator(
               backgroundColor:
-                  isDarkMode ? PaletteTheme.blackTwo : PaletteTheme.whiteTwo,
-              color: PaletteTheme.whiteTwo,
+                  isDarkMode ? PaletteTheme.principal : PaletteTheme.secondary,
+              color:
+                  isDarkMode ? PaletteTheme.whiteTwo : PaletteTheme.principal,
             )
           : CupertinoActivityIndicator(
-              color:
-                  isDarkMode ? PaletteTheme.secondary : PaletteTheme.blackTwo,
+              color: isDarkMode ? PaletteTheme.whiteTwo : PaletteTheme.blackTwo,
               radius: 12,
             ),
     );

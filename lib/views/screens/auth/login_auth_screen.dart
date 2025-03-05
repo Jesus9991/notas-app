@@ -43,6 +43,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                   InputsComponents(
                     hintext: 'Ingresar correo electrónico',
                     textInputAction: TextInputAction.next,
+                    autocorrect: false,
                     keyboardType: TextInputType.emailAddress,
                     controller: auth.emailController,
                     validator: (val) => ValidationInputs.email(val),
