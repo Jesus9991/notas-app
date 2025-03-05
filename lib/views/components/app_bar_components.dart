@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -49,7 +48,11 @@ class AppbarHomeComponents extends StatelessWidget {
                   CircleButtonsComponent(
                     icon: Iconsax.folder_add_bold,
                     onTap: () async {
-                      //Todo: debe abrir el modal para crear categoria
+                      //Todo: debe limpiar el proveedor
+                      /*abre el modal*/
+                      ModalsWidget.showCreateCategorie(
+                        context: context,
+                      );
                       /*efecto de vibracion */
                       await VibrationEffectService().vibrationEffect();
                     },
@@ -58,9 +61,9 @@ class AppbarHomeComponents extends StatelessWidget {
                   CircleButtonsComponent(
                     icon: Iconsax.note_favorite_bold,
                     onTap: () async {
-                      log('TAP:');
-                      //Todo: debe navegar a crear una nota
-                      Navigator.of(context, rootNavigator: true).pushNamed(
+                      //Todo: debe limpiar el proveedor
+                      Navigator.pushNamed(
+                        context,
                         MainRoutes.createNoteRoute,
                       );
                       /*efecto de vibracion */

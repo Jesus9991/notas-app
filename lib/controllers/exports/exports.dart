@@ -1,3 +1,7 @@
+export 'package:notas_app/views/components/backdrop_filter_component.dart';
+export 'package:notas_app/views/widgets/modals_widget.dart';
+export 'package:notas_app/models/create_new_note_models.dart';
+export 'package:notas_app/models/create_category_models.dart';
 export 'package:notas_app/controllers/services/vibration_effect_service.dart';
 export 'package:notas_app/views/components/cards_components.dart';
 export 'package:notas_app/views/components/home_components.dart';

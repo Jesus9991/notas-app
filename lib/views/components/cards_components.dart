@@ -244,3 +244,34 @@ class ListCardComponent extends StatelessWidget {
     );
   }
 }
+
+class CardColorsComponents extends StatelessWidget {
+  final Color color;
+  final String title;
+  const CardColorsComponents({
+    super.key,
+    required this.color,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * .1,
+      width: size.width * .2,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
+      ),
+      child: Center(
+        child: Text(
+          title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}

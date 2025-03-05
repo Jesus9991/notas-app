@@ -26,6 +26,7 @@ class CircleButtonsComponent extends StatelessWidget {
 
     return InkWell(
       onTap: () => onTap(),
+      borderRadius: BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
       child: Stack(
         alignment: Alignment.center,
         children: [

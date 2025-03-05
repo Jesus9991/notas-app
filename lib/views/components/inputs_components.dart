@@ -222,3 +222,77 @@ class OpenSearchComponent extends StatelessWidget {
     );
   }
 }
+
+/*inputs para el titulo de la nota*/
+
+class InputTitleNoteComponent extends StatelessWidget {
+  final String hintext;
+  final String? initialValue;
+  final bool? enabled;
+  final bool autocorrect;
+  final int? maxLine;
+  final TextInputType? keyboardType;
+  final TextCapitalization? textCapitalization;
+  final TextInputAction? textInputAction;
+  final TextEditingController? controller;
+  final String? Function(String? value) validator;
+  final void Function(String value) onChanged;
+
+  const InputTitleNoteComponent({
+    super.key,
+    required this.hintext,
+    this.initialValue,
+    this.enabled,
+    this.maxLine,
+    this.keyboardType,
+    this.textInputAction,
+    this.controller,
+    required this.validator,
+    required this.onChanged,
+    this.textCapitalization,
+    required this.autocorrect,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    /*entorno el brillo actual (modo oscuro o claro) */
+    Brightness brightness = MediaQuery.of(context).platformBrightness;
+    /*verifica si el modo es oscuro o claro */
+    bool isDarkMode = brightness == Brightness.dark;
+    return TextFormField(
+      textAlign: TextAlign.start,
+      controller: controller,
+      autocorrect: autocorrect,
+      initialValue: initialValue,
+      textCapitalization: textCapitalization ?? TextCapitalization.none,
+      enabled: enabled,
+      maxLines: maxLine,
+      style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 20),
+      cursorColor: isDarkMode ? PaletteTheme.secondary : PaletteTheme.principal,
+      keyboardType: keyboardType ?? TextInputType.text,
+      onChanged: (value) => onChanged(value),
+      validator: validator,
+      textInputAction: textInputAction ?? TextInputAction.done,
+      decoration: InputDecoration(
+        hintText: "Añadir título de la nota...",
+        border: InputBorder.none,
+        hintStyle: Theme.of(context)
+            .textTheme
+            .displayMedium!
+            .copyWith(fontSize: 20, fontWeight: FontWeight.w200),
+      ),
+    );
+    // return TextField(
+    //   style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 20),
+    //   cursorColor: isDarkMode ? PaletteTheme.secondary : PaletteTheme.principal,
+    //   decoration: InputDecoration(
+    //     hintText: "Añadir título de la nota...",
+    //     border: InputBorder.none,
+    //     hintStyle: Theme.of(context)
+    //         .textTheme
+    //         .displayMedium!
+    //         .copyWith(fontSize: 20, fontWeight: FontWeight.w200),
+    //   ),
+    // );
+  }
+}
