@@ -12,3 +12,4 @@ export 'package:notas_app/controllers/theme/rounders_border.dart';
 export 'package:notas_app/controllers/theme/font_type_theme.dart';
 export 'package:notas_app/controllers/theme/palette_color_theme.dart';
 export 'package:notas_app/views/components/animated_fade_scale.dart';
+export 'package:notas_app/views/components/custom_button_componente.dart';
