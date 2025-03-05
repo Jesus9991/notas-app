@@ -14,7 +14,7 @@ class MainRoutes {
 
   static Map<String, Widget Function(BuildContext)> routes = {
     /*-----RUTA INICIAL------*/
-    // navBarRoute: (_) => const NavBarForsScreenWidgets(),
+    navBarRoute: (_) => const HomeScreen(),
     //LOGGUEO
     loginScreenRoute: (_) => const LoginAuthScreen(),
     registerScreenRoute: (_) => const RegisterAuthScreen(),

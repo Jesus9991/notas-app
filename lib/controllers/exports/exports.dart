@@ -1,3 +1,9 @@
+export 'package:notas_app/controllers/providers/social_network_provider.dart';
+export 'package:notas_app/controllers/providers/reset_password_auth_provider.dart';
+export 'package:notas_app/controllers/providers/register_auth_provider.dart';
+export 'package:notas_app/controllers/preferences/user_information_preferences.dart';
+export 'package:notas_app/controllers/preferences/login_data_preferences.dart';
+export 'package:notas_app/views/widgets/snackbar_widget.dart';
 export 'package:notas_app/views/components/loading_components.dart';
 export 'package:notas_app/controllers/validations/inputs_validation.dart';
 export 'package:notas_app/views/components/inputs_components.dart';
@@ -13,3 +19,5 @@ export 'package:notas_app/controllers/theme/font_type_theme.dart';
 export 'package:notas_app/controllers/theme/palette_color_theme.dart';
 export 'package:notas_app/views/components/animated_fade_scale.dart';
 export 'package:notas_app/views/components/custom_button_componente.dart';
+export 'package:notas_app/controllers/path/firebase_path.dart';
+export 'package:notas_app/controllers/providers/login_auth_provider.dart';

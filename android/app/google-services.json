@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1005931732324",
+    "firebase_url": "https://notas-app-e0ce7-default-rtdb.firebaseio.com",
+    "project_id": "notas-app-e0ce7",
+    "storage_bucket": "notas-app-e0ce7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005931732324:android:3835aa73506452193eae71",
+        "android_client_info": {
+          "package_name": "com.example.notas_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005931732324-v5l21a82dc6tkd9f6tffml1ns8p8b2um.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1lJg6Ri5ilYArMarjfoe5Hijs4Dojcsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005931732324-v5l21a82dc6tkd9f6tffml1ns8p8b2um.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1005931732324-egh3hi9ndp14fmpog5kn1lvjgv6c8h90.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.notasApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

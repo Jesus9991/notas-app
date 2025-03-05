@@ -15,4 +15,5 @@ class PaletteTheme {
   static const purple = Color.fromRGBO(106, 63, 192, 1);
   static const whiteTwo = Color.fromRGBO(241, 241, 242, 1);
   static const errorColor = Color(0xffc3001d);
+  static const succesColor = Color(0xff69be28);
 }
