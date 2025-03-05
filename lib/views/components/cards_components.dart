@@ -4,6 +4,112 @@ import 'package:notas_app/controllers/exports/exports.dart';
 COMPONENTES: para las cards
 */
 
+/*card para la lista vertical de todas las notas */
+
+class ListCardsNotesComponent extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String created;
+  final Function onTap;
+  const ListCardsNotesComponent({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.created,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    /*entorno el brillo actual (modo oscuro o claro) */
+    Brightness brightness = MediaQuery.of(context).platformBrightness;
+    /*verifica si el modo es oscuro o claro */
+    bool isDarkMode = brightness == Brightness.dark;
+    final size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * .17,
+      width: size.width,
+      padding: EdgeInsets.symmetric(
+          horizontal: size.width * 0.04, vertical: size.height * .01),
+      margin: EdgeInsets.symmetric(horizontal: size.width * .04),
+      decoration: BoxDecoration(
+        color: isDarkMode ? PaletteTheme.blackTwo : PaletteTheme.whiteTwo,
+        borderRadius: BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
+      ),
+      child: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /*titulo del card */
+              SizedBox(
+                width: size.width * .5,
+                child: Text(
+                  title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.start,
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall!
+                      .copyWith(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ),
+              Text(
+                created,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.start,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: size.height * .02),
+              Text(
+                subtitle,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.start,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
+          ),
+          /*categoria */
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
+            spacing: size.width * .01,
+            children: [
+              CircleAvatar(
+                backgroundColor: PaletteTheme.purple,
+                radius: 7,
+              ),
+              SizedBox(
+                width: size.width * .2,
+                child: Text(
+                  'categorie.name',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.end,
+                ),
+              )
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: CircleAvatar(
+              radius: 15,
+              child: Icon(Icons.arrow_outward_outlined),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+/*card pinneadas */
 class ListCardPinnedComponents extends StatelessWidget {
   final String title;
   final String subtitle;

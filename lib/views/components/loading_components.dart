@@ -42,7 +42,7 @@ class LoadingComponents extends StatelessWidget {
     /*verifica si el modo es oscuro o claro */
     bool isDarkMode = brightness == Brightness.dark;
     return Center(
-      child: isiOS
+      child: !isiOS
           ? CircularProgressIndicator(
               backgroundColor:
                   isDarkMode ? PaletteTheme.principal : PaletteTheme.secondary,

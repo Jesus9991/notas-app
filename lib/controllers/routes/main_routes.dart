@@ -11,6 +11,7 @@ class MainRoutes {
   static const registerScreenRoute = '/register_screen_route';
   static const resetPasswordScreenRoute = '/reset_screen_route';
   static const welcomeScreenRoute = '/welcome_screen_route';
+  static const createNoteRoute = '/create_new_nota_route';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     /*-----RUTA INICIAL------*/
@@ -20,5 +21,7 @@ class MainRoutes {
     registerScreenRoute: (_) => const RegisterAuthScreen(),
     resetPasswordScreenRoute: (_) => const ResetPasswordAuthScreen(),
     welcomeScreenRoute: (_) => const WelcomeAuthScreen(),
+    //NOTAS
+    createNoteRoute: (_) => const CreateNewNoteScreen(),
   };
 }

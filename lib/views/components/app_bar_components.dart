@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -15,11 +16,16 @@ class AppbarHomeComponents extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return SliverAppBar(
-      toolbarHeight: size.height * .01,
-      expandedHeight: size.height * .01,
+      toolbarHeight:
+          size.height * .1, //Define la altura mínima del SliverAppBar
+      expandedHeight:
+          size.height * .1, //Define la altura máxima del SliverAppBar
       elevation: 0,
       pinned: true,
+      shadowColor: PaletteTheme.transparent,
       backgroundColor: PaletteTheme.transparent,
+      surfaceTintColor: PaletteTheme.transparent,
+      foregroundColor: PaletteTheme.transparent,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
         stretchModes: [
@@ -42,8 +48,23 @@ class AppbarHomeComponents extends StatelessWidget {
                   /*nueva categoria*/
                   CircleButtonsComponent(
                     icon: Iconsax.folder_add_bold,
-                    onTap: () {
-                      //Todo: debe abrir el buscador
+                    onTap: () async {
+                      //Todo: debe abrir el modal para crear categoria
+                      /*efecto de vibracion */
+                      await VibrationEffectService().vibrationEffect();
+                    },
+                  ),
+                  SizedBox(width: size.width * .02),
+                  CircleButtonsComponent(
+                    icon: Iconsax.note_favorite_bold,
+                    onTap: () async {
+                      log('TAP:');
+                      //Todo: debe navegar a crear una nota
+                      Navigator.of(context, rootNavigator: true).pushNamed(
+                        MainRoutes.createNoteRoute,
+                      );
+                      /*efecto de vibracion */
+                      await VibrationEffectService().vibrationEffect();
                     },
                   ),
                 ],

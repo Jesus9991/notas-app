@@ -13,95 +13,19 @@ class ListNotesComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    /*entorno el brillo actual (modo oscuro o claro) */
-    Brightness brightness = MediaQuery.of(context).platformBrightness;
-    /*verifica si el modo es oscuro o claro */
-    bool isDarkMode = brightness == Brightness.dark;
+
     return SliverList.separated(
       itemCount: 5,
       separatorBuilder: (context, index) => SizedBox(height: size.height * .02),
       itemBuilder: (context, index) {
-        return Container(
-          height: size.height * .17,
-          width: size.width,
-          padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.04, vertical: size.height * .01),
-          margin: EdgeInsets.symmetric(horizontal: size.width * .04),
-          decoration: BoxDecoration(
-            color: isDarkMode ? PaletteTheme.blackTwo : PaletteTheme.whiteTwo,
-            borderRadius:
-                BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
-          ),
-          child: Stack(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  /*titulo del card */
-                  SizedBox(
-                    width: size.width * .5,
-                    child: Text(
-                      'Lorem Ipsum is simply',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.start,
-                      style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: PaletteTheme.secondary,
-                          fontSize: 15),
-                    ),
-                  ),
-                  Text(
-                    '12 sep 2024 · 10:00 am',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: PaletteTheme.secondary,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: size.height * .02),
-                  Text(
-                    "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                          color: PaletteTheme.secondary,
-                        ),
-                  ),
-                ],
-              ),
-              /*categoria */
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.end,
-                spacing: size.width * .01,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: PaletteTheme.purple,
-                    radius: 7,
-                  ),
-                  SizedBox(
-                    width: size.width * .2,
-                    child: Text(
-                      'categorie.name',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.end,
-                    ),
-                  )
-                ],
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: CircleAvatar(
-                  radius: 15,
-                  child: Icon(Icons.arrow_outward_outlined),
-                ),
-              )
-            ],
-          ),
+        return ListCardsNotesComponent(
+          title: 'Lorem Ipsum is simply',
+          created: '12 sep 2024 · 10:00 am',
+          subtitle:
+              "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          onTap: () {
+            //Todo: debe navegar
+          },
         );
       },
     );

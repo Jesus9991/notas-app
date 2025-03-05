@@ -50,7 +50,7 @@ class CircleButtonsComponent extends StatelessWidget {
           // Icono de búsqueda
           Icon(
             icon,
-            color: PaletteTheme.secondary,
+            color: isDarkMode ? PaletteTheme.secondary : PaletteTheme.purple,
             size: size.width * 0.06,
           ),
         ],

@@ -100,7 +100,6 @@ class GradientTwoBackground extends StatelessWidget {
     bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(),
       body: SizedBox(
         height: size.height,
         width: size.width,

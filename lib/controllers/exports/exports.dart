@@ -1,3 +1,4 @@
+export 'package:notas_app/controllers/services/vibration_effect_service.dart';
 export 'package:notas_app/views/components/cards_components.dart';
 export 'package:notas_app/views/components/home_components.dart';
 export 'package:notas_app/views/components/circle_buttons_component.dart';
