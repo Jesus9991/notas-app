@@ -19,7 +19,7 @@ class RegisterAuthScreen extends StatelessWidget {
         children: [
           SizedBox(height: size.height * .06),
           //logo
-          LogoTitleComponent(),
+          LogoTitleComponent(isViewLogo: true),
           SizedBox(height: size.height * .03),
           //inputs-correo
           InputsComponents(
@@ -52,7 +52,11 @@ class RegisterAuthScreen extends StatelessWidget {
             text: 'Registrarse',
             isLoading: false,
             onTap: () {
-              //Todo: debe registrar al usuario
+              //Todo: debe navegar a la pantalla de bienvenida
+              Navigator.pushNamed(
+                context,
+                MainRoutes.welcomeScreenRoute,
+              );
             },
           ),
           SizedBox(height: size.height * .03),

@@ -10,6 +10,7 @@ class MainRoutes {
   static const loginScreenRoute = '/login_screen_route';
   static const registerScreenRoute = '/register_screen_route';
   static const resetPasswordScreenRoute = '/reset_screen_route';
+  static const welcomeScreenRoute = '/welcome_screen_route';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     /*-----RUTA INICIAL------*/
@@ -18,5 +19,6 @@ class MainRoutes {
     loginScreenRoute: (_) => const LoginAuthScreen(),
     registerScreenRoute: (_) => const RegisterAuthScreen(),
     resetPasswordScreenRoute: (_) => const ResetPasswordAuthScreen(),
+    welcomeScreenRoute: (_) => const WelcomeAuthScreen(),
   };
 }

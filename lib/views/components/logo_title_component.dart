@@ -6,7 +6,11 @@ import 'package:notas_app/controllers/exports/exports.dart';
 LOGO: para el auth, reutilizable en varias pantalla
 */
 class LogoTitleComponent extends StatelessWidget {
-  const LogoTitleComponent({super.key});
+  final bool isViewLogo;
+  const LogoTitleComponent({
+    super.key,
+    required this.isViewLogo,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +22,11 @@ class LogoTitleComponent extends StatelessWidget {
     return Column(
       // spacing: size.height * .02,
       children: [
-        Image.asset(
-          isDarkMode ? ImagesPath.logoDark : ImagesPath.logoLight,
-        ),
-        SizedBox(height: size.height * .02),
+        if (isViewLogo)
+          Image.asset(
+            isDarkMode ? ImagesPath.logoDark : ImagesPath.logoLight,
+          ),
+        if (isViewLogo) SizedBox(height: size.height * .02),
         Text(
           'Bienvenido a',
           maxLines: 2,

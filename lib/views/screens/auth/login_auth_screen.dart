@@ -20,7 +20,7 @@ class LoginAuthScreen extends StatelessWidget {
           children: [
             SizedBox(height: size.height * .06),
             //logo
-            LogoTitleComponent(),
+            LogoTitleComponent(isViewLogo: true),
             SizedBox(height: size.height * .03),
             //inputs-correo
             InputsComponents(
