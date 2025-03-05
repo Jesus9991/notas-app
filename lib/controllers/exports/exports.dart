@@ -1,3 +1,8 @@
+export 'package:notas_app/views/components/cards_components.dart';
+export 'package:notas_app/views/components/home_components.dart';
+export 'package:notas_app/views/components/circle_buttons_component.dart';
+export 'package:notas_app/controllers/providers/user_information_provider.dart';
+export 'package:notas_app/views/components/app_bar_components.dart';
 export 'package:notas_app/controllers/providers/system_navegation_provider.dart';
 export 'package:notas_app/controllers/providers/social_network_provider.dart';
 export 'package:notas_app/controllers/providers/reset_password_auth_provider.dart';

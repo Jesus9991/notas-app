@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notas_app/controllers/exports/exports.dart';
-import 'package:provider/provider.dart';
 
 /*
 pantalla para el home de la aplicacion
@@ -11,20 +10,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final auth = Provider.of<LoginAuthProvider>(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('HomeScreen'),
-      ),
-      body: Center(
-        child: CustomButton(
-          text: 'Cerrar sesion',
-          isLoading: false,
-          onTap: () async {
-            await auth.closeSesionAuth(context);
-          },
-        ),
-      ),
-    );
+    return GradientTwoBackground(
+        child: CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      slivers: [
+        /*apbbar*/
+        AppbarHomeComponents(),
+        //abre el buscador
+        SliverToBoxAdapter(child: OpenSearchComponent()),
+        //categorias
+        ListCategories(),
+        //pinned
+        BannerPinnedComponent(),
+        SliverToBoxAdapter(child: SizedBox(height: size.height * .03)),
+        //lista de notas
+        ListNotesComponent(),
+      ],
+    ));
   }
 }

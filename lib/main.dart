@@ -30,6 +30,7 @@ class ProviderApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ResetPasswordProvider()),
         ChangeNotifierProvider(create: (context) => SocialNetworkProvider()),
         ChangeNotifierProvider(create: (context) => SystemNavegationProvider()),
+        ChangeNotifierProvider(create: (context) => UserInformationProvider()),
       ],
       child: NavegationSystemApp(),
     );

@@ -172,3 +172,53 @@ class _InputPasswordComponentState extends State<InputPasswordComponent> {
     );
   }
 }
+
+class OpenSearchComponent extends StatelessWidget {
+  const OpenSearchComponent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    /*entorno el brillo actual (modo oscuro o claro) */
+    Brightness brightness = MediaQuery.of(context).platformBrightness;
+    /*verifica si el modo es oscuro o claro */
+    bool isDarkMode = brightness == Brightness.dark;
+    return InkWell(
+      borderRadius: BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
+      onTap: () {
+        //Todo: debe navegar al buscador
+      },
+      child: Container(
+        height: size.height * .06,
+        width: size.width,
+        margin: EdgeInsets.only(
+            top: size.height * .03,
+            right: size.width * .04,
+            left: size.width * .04),
+        padding: EdgeInsets.symmetric(horizontal: size.width * .04),
+        decoration: BoxDecoration(
+          borderRadius:
+              BorderRadius.circular(RoundersBorderTheme.rounderbuttons),
+          color: isDarkMode ? PaletteTheme.blackTwo : PaletteTheme.whiteTwo,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: size.width * .02,
+          children: [
+            Icon(
+              Iconsax.search_normal_outline,
+              color:
+                  isDarkMode ? PaletteTheme.secondary : PaletteTheme.principal,
+            ),
+            Text(
+              'Buscar notas',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.start,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
